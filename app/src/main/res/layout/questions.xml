@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.Questions">
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@android:color/black"
+                android:gravity="center"
+                android:padding="@dimen/tenDp"
+                android:text="@string/data_structures"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/extraLargeSize"
+                android:textStyle="bold"
+                android:typeface="serif" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/questionsListRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/zeroDp"
+                android:layout_weight="1"
+                android:background="@color/matGreenLight"
+                android:scrollbars="vertical" />
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmerBannerQuestions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@android:color/black"
+                android:elevation="@dimen/fiveDp"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:id="@+id/bannerAd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@android:color/black"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/fiveDp">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@android:color/black"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/learncodeonlinewhite" />
+
+                    <TextView
+                        android:layout_width="@dimen/oneFiftyDp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="@android:color/black"
+                        android:gravity="center"
+                        android:paddingLeft="5dp"
+                        android:text="@string/learncodeonline"
+                        android:textColor="@android:color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
+
+        </LinearLayout>
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">InterView Prep</string>
+    <string name="check_internet_connection">Please check your internet connection</string>
+    <string name="welcome">Welcome</string>
+    <string name="iprep">InterView Prep</string>
+    <string name="learncodeonline">LearnCodeOnline</string>
+    <string name="hi">Hi!</string>
+    <string name="data_structures">Data Structures</string>
+    <string name="firstIntro">Welcome to Interview Perp.</string>
+    <string name="secondIntro">This will help you learn data structures</string>
+    <string name="thirdIntro">Press start to continue</string>
+
+</resources>

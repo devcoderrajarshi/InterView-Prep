@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="tenDp">10dp</dimen>
+    <dimen name="hundredDp">100dp</dimen>
+    <dimen name="mediumSize">16sp</dimen>
+    <dimen name="fiveDp">5dp</dimen>
+    <dimen name="largeText">18sp</dimen>
+    <dimen name="fortyDp">40dp</dimen>
+    <dimen name="zeroDp">0dp</dimen>
+    <dimen name="oneFiftyDp">150dp</dimen>
+    <dimen name="extraLargeSize">25sp</dimen>
+</resources>
