@@ -43,5 +43,7 @@ dependencies {
     //cardView and recyclerView
     implementation 'com.android.support:recyclerview-v7:27.1.1'
     implementation 'com.android.support:cardview-v7:27.1.1'
+    //transition everywhere
+    implementation "com.andkulikov:transitionseverywhere:1.7.9"
 
 }

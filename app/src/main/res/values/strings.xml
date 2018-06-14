@@ -6,8 +6,5 @@
     <string name="learncodeonline">LearnCodeOnline</string>
     <string name="hi">Hi!</string>
     <string name="data_structures">Data Structures</string>
-    <string name="firstIntro">Welcome to Interview Perp.</string>
-    <string name="secondIntro">This will help you learn data structures</string>
-    <string name="thirdIntro">Press start to continue</string>
 
 </resources>

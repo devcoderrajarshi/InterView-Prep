@@ -1,5 +1,6 @@
 package com.example.rajarshi.interviewprep.ui;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -11,11 +12,12 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.rajarshi.interviewprep.R;
 import com.example.rajarshi.interviewprep.recyclerViewAdapter.InterviewAdapter;
-import com.example.rajarshi.interviewprep.recyclerViewAdapter.QuestionAnswer;
+import com.example.rajarshi.interviewprep.recyclerViewAdapter.QuestionAnswerModel;
 import com.example.rajarshi.interviewprep.services.APIResult;
 import com.example.rajarshi.interviewprep.services.APIService_Volley_JSON;
 import com.example.rajarshi.interviewprep.utils.ApiUtils;
@@ -33,42 +35,59 @@ import es.dmoral.toasty.Toasty;
 public class Questions extends AppCompatActivity implements APIResult, SwipeRefreshLayout.OnRefreshListener {
 
 
-    private List<QuestionAnswer> questionAnswersList = new ArrayList<>();
+    private boolean flag = true;
+    private List<QuestionAnswerModel> questionAnswersList = new ArrayList<>();
     private RecyclerView recyclerView;
     private InterviewAdapter mAdapter;
     private boolean doubleBackToExitPressedOnce = false;
     private SwipeRefreshLayout refreshLayout;
-    private ShimmerFrameLayout bannerShimmer;
+    private ShimmerFrameLayout titleShimmer;
+    private LinearLayout bannerAd;
+    public Context ctx;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.questions);
+        ctx =this;
 
-        bannerShimmer = findViewById(R.id.shimmerBannerQuestions);
+        titleShimmer = findViewById(R.id.shimmerTitleQuestions);
+        bannerAd = findViewById(R.id.bannerAdQuestions);
 
         //Shimmer Effect
-        bannerShimmer.setBaseAlpha(0.5f);
-        bannerShimmer.setDuration(2500);
-        bannerShimmer.startShimmerAnimation();
+        titleShimmer.setBaseAlpha(0.5f);
+        titleShimmer.setDuration(2500);
+        titleShimmer.startShimmerAnimation();
 
 
-        bannerShimmer.setOnClickListener(new View.OnClickListener() {
+        bannerAd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Uri uri = Uri.parse(ApiUtils.bannerAdUrl);
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(intent);
+                startActivity(Intent.createChooser(intent, "Open with a browser"));
             }
         });
 
         recyclerView = (RecyclerView) findViewById(R.id.questionsListRecycler);
         refreshLayout = findViewById(R.id.swipeRefresh);
         refreshLayout.setOnRefreshListener(this);
-        mAdapter = new InterviewAdapter(questionAnswersList);
+        mAdapter = new InterviewAdapter(questionAnswersList,ctx);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+
+                if (!recyclerView.canScrollVertically(1) && flag) {
+                    Toasty.success(Questions.this, "Great ! You have finished all questions", Toast.LENGTH_SHORT).show();
+                    flag = false;
+
+                }
+            }
+        });
         recyclerView.setAdapter(mAdapter);
         fetchData();
 
@@ -88,12 +107,12 @@ public class Questions extends AppCompatActivity implements APIResult, SwipeRefr
                 for (int i = 0; i < questionsArray.length(); i++) {
                     Log.d("Array", "value: " + questionsArray.getJSONObject(i).getString("question"));
                     Log.d("Array", "value: " + questionsArray.getJSONObject(i).getString("Answer"));
-                    String q = questionsArray.getJSONObject(i).getString("question");
-                    String a = questionsArray.getJSONObject(i).getString("Answer");
-                    QuestionAnswer qa = new QuestionAnswer(q, a);
+                    String q = questionsArray.getJSONObject(i).getString("question").trim();
+                    String a = questionsArray.getJSONObject(i).getString("Answer").trim();
+                    QuestionAnswerModel qa = new QuestionAnswerModel(q, a);
                     questionAnswersList.add(qa);
-                    mAdapter.notifyDataSetChanged();
                 }
+                mAdapter.notifyDataSetChanged();
 
 
             } else {

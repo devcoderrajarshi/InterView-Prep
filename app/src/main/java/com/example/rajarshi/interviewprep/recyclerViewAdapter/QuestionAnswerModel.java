@@ -1,10 +1,10 @@
 package com.example.rajarshi.interviewprep.recyclerViewAdapter;
 
-public class QuestionAnswer {
+public class QuestionAnswerModel {
     private String questions;
     private String answers;
 
-    public QuestionAnswer(String questions, String answers) {
+    public QuestionAnswerModel(String questions, String answers) {
         this.questions = questions;
         this.answers = answers;
     }

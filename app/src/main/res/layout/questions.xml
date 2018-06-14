@@ -17,6 +17,15 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmerTitleQuestions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@android:color/black"
+                android:elevation="@dimen/fiveDp"
+                android:visibility="visible">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -30,25 +39,20 @@
                 android:textStyle="bold"
                 android:typeface="serif" />
 
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/questionsListRecycler"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/zeroDp"
                 android:layout_weight="1"
-                android:background="@color/matGreenLight"
+                android:background="@android:color/white"
                 android:scrollbars="vertical" />
 
-            <com.facebook.shimmer.ShimmerFrameLayout
-                android:id="@+id/shimmerBannerQuestions"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@android:color/black"
-                android:elevation="@dimen/fiveDp"
-                android:visibility="visible">
+
 
                 <LinearLayout
-                    android:id="@+id/bannerAd"
+                    android:id="@+id/bannerAdQuestions"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -80,7 +84,7 @@
                 </LinearLayout>
 
 
-            </com.facebook.shimmer.ShimmerFrameLayout>
+
 
 
         </LinearLayout>
