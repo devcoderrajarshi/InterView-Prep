@@ -49,16 +49,17 @@
             android:gravity="center">
 
             <ImageView
-                android:visibility="gone"
                 android:id="@+id/startLearnCoding"
                 android:layout_width="@dimen/hundredDp"
                 android:layout_height="@dimen/hundredDp"
                 android:alpha="0.0"
                 android:background="@drawable/round_background"
+                android:contentDescription="@string/start_button"
                 android:elevation="@dimen/tenDp"
                 android:padding="@dimen/tenDp"
                 android:paddingBottom="@dimen/tenDp"
-                android:src="@drawable/learncodeonlinewhite" />
+                android:src="@drawable/learncodeonlinewhite"
+                android:visibility="gone" />
         </LinearLayout>
 
 
@@ -74,6 +75,7 @@
                 android:layout_width="@dimen/fortyDp"
                 android:layout_height="@dimen/fortyDp"
                 android:background="@android:color/black"
+                android:contentDescription="@string/learn_code_online_banner_ad"
                 android:scaleType="centerCrop"
                 android:src="@drawable/learncodeonlinewhite" />
 
@@ -83,7 +85,8 @@
                 android:layout_gravity="center"
                 android:background="@android:color/black"
                 android:gravity="center"
-                android:paddingLeft="@dimen/fiveDp"
+                android:paddingEnd="@dimen/fiveDp"
+                android:paddingStart="@dimen/fiveDp"
                 android:text="@string/learncodeonline"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/largeText"

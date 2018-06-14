@@ -27,9 +27,9 @@ import org.json.JSONObject;
 public class APIService_Volley_JSON extends AsyncTask<String, String, String> {
 
     public Context mContext;
-    String result = "";
-    JsonObjectRequest JOR;
-    RequestQueue requestQueue;
+    private String result = "";
+    private JsonObjectRequest JOR;
+    private RequestQueue requestQueue;
     private boolean isSuccess = true;
     private Dialog mDialog;
     private APIResult response;

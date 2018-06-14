@@ -26,65 +26,63 @@
                 android:elevation="@dimen/fiveDp"
                 android:visibility="visible">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@android:color/black"
-                android:gravity="center"
-                android:padding="@dimen/tenDp"
-                android:text="@string/data_structures"
-                android:textColor="@android:color/white"
-                android:textSize="@dimen/extraLargeSize"
-                android:textStyle="bold"
-                android:typeface="serif" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@android:color/black"
+                    android:gravity="center"
+                    android:padding="@dimen/tenDp"
+                    android:text="@string/data_structures"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/extraLargeSize"
+                    android:textStyle="bold"
+                    android:typeface="serif" />
 
             </com.facebook.shimmer.ShimmerFrameLayout>
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/questionsListRecycler"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/zeroDp"
+                android:layout_height="0dp"
                 android:layout_weight="1"
                 android:background="@android:color/white"
                 android:scrollbars="vertical" />
 
 
+            <LinearLayout
+                android:id="@+id/bannerAdQuestions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@android:color/black"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/fiveDp">
 
-                <LinearLayout
-                    android:id="@+id/bannerAdQuestions"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@android:color/black"
+                    android:contentDescription="@string/learn_code_online_banner_ad"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/learncodeonlinewhite" />
+
+                <TextView
+                    android:layout_width="@dimen/oneFiftyDp"
+                    android:layout_height="40dp"
                     android:layout_gravity="center"
                     android:background="@android:color/black"
                     android:gravity="center"
-                    android:orientation="horizontal"
-                    android:padding="@dimen/fiveDp">
-
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:background="@android:color/black"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/learncodeonlinewhite" />
-
-                    <TextView
-                        android:layout_width="@dimen/oneFiftyDp"
-                        android:layout_height="40dp"
-                        android:layout_gravity="center"
-                        android:background="@android:color/black"
-                        android:gravity="center"
-                        android:paddingLeft="5dp"
-                        android:text="@string/learncodeonline"
-                        android:textColor="@android:color/white"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
+                    android:paddingEnd="5dp"
+                    android:paddingStart="5dp"
+                    android:text="@string/learncodeonline"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
 
-                </LinearLayout>
-
-
-
+            </LinearLayout>
 
 
         </LinearLayout>

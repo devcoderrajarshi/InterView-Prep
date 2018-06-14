@@ -16,7 +16,7 @@ Interview Prep. is a basic android app which will help students to learn about d
 ## Getting Started
 
 you just need an android device running Android Lollipop 5.1 to run this application provided below:
-Download APK file : [Click here to download](https://drive.google.com/open?id=1LLpkaP3aBidZo6GfeZ7cVhrSeQVRL7Ca)
+Download APK file : [Click here to download](https://drive.google.com/open?id=1wo-BiXXi__55rSEoFeiMuUR_m6t-ZEqs)
 
 ## Contributors
 

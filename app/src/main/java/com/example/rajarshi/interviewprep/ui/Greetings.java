@@ -12,9 +12,7 @@ import android.widget.LinearLayout;
 
 import com.example.rajarshi.interviewprep.R;
 import com.example.rajarshi.interviewprep.animations.Scaling;
-import com.example.rajarshi.interviewprep.animations.Translating;
 import com.example.rajarshi.interviewprep.utils.ApiUtils;
-import com.facebook.shimmer.ShimmerFrameLayout;
 
 import su.levenetc.android.badgeview.BadgeView;
 
