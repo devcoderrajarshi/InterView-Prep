@@ -9,12 +9,14 @@
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/swipeRefresh"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:windowSoftInputMode="adjustNothing">
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@android:color/black"
             android:orientation="vertical">
 
             <com.facebook.shimmer.ShimmerFrameLayout
@@ -54,34 +56,40 @@
                 android:id="@+id/bannerAdQuestions"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@android:color/black"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:padding="@dimen/fiveDp">
+                android:layout_gravity="center">
 
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:background="@android:color/black"
-                    android:contentDescription="@string/learn_code_online_banner_ad"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/learncodeonlinewhite" />
-
-                <TextView
-                    android:layout_width="@dimen/oneFiftyDp"
-                    android:layout_height="40dp"
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:background="@android:color/black"
                     android:gravity="center"
-                    android:paddingEnd="5dp"
-                    android:paddingStart="5dp"
-                    android:text="@string/learncodeonline"
-                    android:textColor="@android:color/white"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:orientation="horizontal"
+                    android:padding="@dimen/fiveDp">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@android:color/black"
+                        android:contentDescription="@string/learn_code_online_banner_ad"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/learncodeonlinewhite" />
+
+                    <TextView
+                        android:layout_width="@dimen/oneFiftyDp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="@android:color/black"
+                        android:gravity="center"
+                        android:paddingEnd="5dp"
+                        android:paddingStart="5dp"
+                        android:text="@string/learncodeonline"
+                        android:textColor="@android:color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
 
+                </LinearLayout>
             </LinearLayout>
 
 

@@ -39,6 +39,16 @@
             android:textStyle="bold"
             android:typeface="serif" />
 
+        <ImageButton
+            android:id="@+id/shareQuestionAndAnswer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/fiveDp"
+            android:background="@android:color/white"
+            android:padding="@dimen/fiveDp"
+            android:src="@drawable/share_ico" />
+
 
     </LinearLayout>
 

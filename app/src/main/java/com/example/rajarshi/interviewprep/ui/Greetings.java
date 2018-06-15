@@ -61,7 +61,7 @@ public class Greetings extends AppCompatActivity {
             @Override
             public void run() {
                 new BadgeView.AnimationSet(intro)
-                        .add("Welcome", 600)
+                        .add("Welcome", 800)
                         .addDelay(200)
                         .add("Press Start to Continue", 800)
                         .play();

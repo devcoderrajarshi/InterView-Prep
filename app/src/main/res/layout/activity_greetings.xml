@@ -64,33 +64,43 @@
 
 
         <LinearLayout
-            android:id="@+id/bannerAd"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:background="@android:color/black"
-            android:orientation="horizontal"
-            android:padding="@dimen/fiveDp">
+            android:gravity="center">
 
-            <ImageView
-                android:layout_width="@dimen/fortyDp"
-                android:layout_height="@dimen/fortyDp"
+            <LinearLayout
+                android:id="@+id/bannerAd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:background="@android:color/black"
-                android:contentDescription="@string/learn_code_online_banner_ad"
-                android:scaleType="centerCrop"
-                android:src="@drawable/learncodeonlinewhite" />
+                android:orientation="horizontal"
+                android:padding="@dimen/fiveDp">
 
-            <TextView
-                android:layout_width="@dimen/oneFiftyDp"
-                android:layout_height="@dimen/fortyDp"
-                android:layout_gravity="center"
-                android:background="@android:color/black"
-                android:gravity="center"
-                android:paddingEnd="@dimen/fiveDp"
-                android:paddingStart="@dimen/fiveDp"
-                android:text="@string/learncodeonline"
-                android:textColor="@android:color/white"
-                android:textSize="@dimen/largeText"
-                android:textStyle="bold" />
+                <ImageView
+                    android:layout_width="@dimen/fortyDp"
+                    android:layout_height="@dimen/fortyDp"
+                    android:background="@android:color/black"
+                    android:contentDescription="@string/learn_code_online_banner_ad"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/learncodeonlinewhite" />
+
+                <TextView
+                    android:layout_width="@dimen/oneFiftyDp"
+                    android:layout_height="@dimen/fortyDp"
+                    android:layout_gravity="center"
+                    android:background="@android:color/black"
+                    android:gravity="center"
+                    android:paddingEnd="@dimen/fiveDp"
+                    android:paddingStart="@dimen/fiveDp"
+                    android:text="@string/learncodeonline"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/largeText"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
 
 
         </LinearLayout>

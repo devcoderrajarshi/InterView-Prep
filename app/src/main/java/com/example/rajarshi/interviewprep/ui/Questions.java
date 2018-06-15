@@ -5,12 +5,16 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -32,7 +36,7 @@ import java.util.List;
 
 import es.dmoral.toasty.Toasty;
 
-public class Questions extends AppCompatActivity implements APIResult, SwipeRefreshLayout.OnRefreshListener {
+public class Questions extends AppCompatActivity implements APIResult, SwipeRefreshLayout.OnRefreshListener, SearchView.OnQueryTextListener {
 
 
     private boolean flag = true;
@@ -49,7 +53,7 @@ public class Questions extends AppCompatActivity implements APIResult, SwipeRefr
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.questions);
-        ctx =this;
+        ctx = this;
 
         titleShimmer = findViewById(R.id.shimmerTitleQuestions);
         bannerAd = findViewById(R.id.bannerAdQuestions);
@@ -72,7 +76,7 @@ public class Questions extends AppCompatActivity implements APIResult, SwipeRefr
         recyclerView = (RecyclerView) findViewById(R.id.questionsListRecycler);
         refreshLayout = findViewById(R.id.swipeRefresh);
         refreshLayout.setOnRefreshListener(this);
-        mAdapter = new InterviewAdapter(questionAnswersList,ctx);
+        mAdapter = new InterviewAdapter(questionAnswersList, ctx);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -165,5 +169,37 @@ public class Questions extends AppCompatActivity implements APIResult, SwipeRefr
         }, 1000);
         fetchData();
         mAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.searchmenuquestions, menu);
+        MenuItem menuItem = menu.findItem(R.id.searchQuestion);
+        SearchView searchView = (SearchView) MenuItemCompat.getActionView(menuItem);
+        searchView.setOnQueryTextListener(this);
+        searchView.setQueryHint("Search by question");
+        return true;
+    }
+
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        filter(newText);
+        return true;
+    }
+
+    void filter(String text) {
+        List<QuestionAnswerModel> temp = new ArrayList();
+        for (QuestionAnswerModel d : questionAnswersList) {
+            Log.d("Data ", "filter: " + d.getQuestions());
+            if (d.getQuestions().toLowerCase().contains(text.toLowerCase())) {
+                temp.add(d);
+            }
+        }
+        mAdapter.setFilter(temp);
     }
 }

@@ -16,7 +16,7 @@
     </style>
 
 
-    <style name="dialogwinddow" parent="android:Theme.Dialog">
+    <style name="dialogwinddow" parent="Theme.AppCompat.Dialog">
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowIsFloating">true</item>
